@@ -1,0 +1,563 @@
+@use "../foundation"as *;
+
+
+.p-chara {
+  &-staff {
+    &__list {
+      position: relative;
+      padding: 0 4vw;
+      @include flex($align:center,$justify:space-between);
+      @include column4(14.5%);
+    }
+
+    &__item {
+      margin-top: vw(40px, 768);
+      cursor: pointer;
+      width: 47.4%;
+      @include mq-target(sm) {
+        margin-top: min(vwpc(24px),40px);
+        width: 14.5%;
+      }      
+      & .p-chara-staff__img picture:hover,:focus {
+        transform: scale(1.1);
+      }
+    }
+
+
+    &__img {
+      display: block;
+      position: relative;
+      margin-bottom: 10px;
+      // border: 4px solid $color-key-2;
+      overflow: hidden;
+      position: relative;
+      height: min(vwsp(280px),380px);
+
+      @include mq-target(sm) {
+        height: min(vwpc(280px),380px);
+      }
+
+
+
+      &::before {
+        content: "";
+        @include absAll;
+        background: $color-red;
+      }
+
+      picture {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+        height: min(vwsp(280px),380px);
+        transition: all 0.8s cubic-bezier(.2, 1, .2, 1);;
+
+        @include mq-target(sm) {
+          height: min(vwpc(280px),380px);
+        }
+
+
+        img {
+          @include absCenter;
+          max-width: min(vwsp(200px),300px);
+          width: min(vwsp(200px),300px);
+          @include mq-target(sm) {
+            top: min(vwpc(160px),200px);
+            // left: calc(50% - 3.041667vw);
+            max-width: min(vwpc(200px),300px);
+            width: min(vwpc(200px),300px);
+          }
+        }
+      }
+    }
+
+    &__focus {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      &::before {
+        content: "■";
+        position: absolute;
+        bottom: vw(-100px,768);
+        right: vw(-65px,768);
+        font-size: vw(124px,768);
+        background: #191e27;
+        color: #191e27;
+
+        transform: rotate(45deg);
+        z-index: 10;
+
+        @include mq-target(sm) {
+          bottom: vw(-100px,1200);
+          right: vw(-65px,1200);
+          font-size: vw(124px,1200);
+        }
+
+        @include mq-target(lg) {
+          bottom: vw(-100px,1920);
+          right: vw(-65px,1920);
+          font-size: vw(124px,1920);
+        }
+      }
+
+      svg {
+        position: relative;
+        width: vw(34px,768);
+        height: vw(34px,768);
+        fill: $color-red;
+        z-index: 11;
+
+        @include mq-target(sm) {
+          width: vw(34px,1200);
+          height: vw(34px,1200);
+        }
+
+        @include mq-target(lg) {
+          width: vw(34px,1920);
+          height: vw(34px,1920);
+        }
+      }
+    }
+
+    &__name {
+      color: $color-key-2;
+      font-size: vw(22px,768);
+      @include mq-target(sm) {
+        font-size: vw(22px, 1200);
+      }
+      @include mq-target(lg) {
+        font-size: vw(18px, 1920);
+      }
+    }
+  }
+
+  &__inner {
+
+    // height: 800px;
+    position: relative;
+
+    &::after {
+      @include absAll;
+      top: 0;
+      background-image: linear-gradient(to right bottom, rgba(32, 33, 33, 0.85), rgba(16, 16, 16, 0.89)),url(../../assets/images/about_bg.jpg) ;
+      // background: url(../../assets/images/about_bg.jpg) center top no-repeat;
+      background-size: cover;
+      z-index: -3;
+    }
+  }
+
+  &-slider {
+    overflow: visible;
+    position: relative;
+
+    &__thumb {
+      width: 96%;
+      margin: auto;
+      margin-top: 40px;
+
+      @include mq-target(sm) {
+
+        margin: vw(30px, 1920) auto 0;
+        width: 92%;
+      }
+
+      @include mq-target(lg) {
+        width: vw(1200px, 1920);
+      }
+    }
+
+    &__list {
+      &--thumb {
+        @include flex($align:center, $wrap:wrap);
+        justify-content: flex-end;
+        width: 100%;
+        margin: 0 auto;
+        overflow: visible;
+      }
+    }
+
+    &__item {
+
+      &--thumb {
+        cursor: pointer;
+        margin-right: 1%;
+        width: 32%;
+
+        @include mq-target(sm) {
+          width: 16.5%;
+        }
+
+        &.swiper-slide-thumb-active img {
+          filter: grayscale(0);
+        }
+
+        img {
+          filter: grayscale(1);
+          transition: filter 0.4s ease;
+        }
+      }
+
+      &--slide {
+        opacity: 0;
+        transition: opacity 0.5s ease 0s;
+        // overflow: hidden;
+        position: relative;
+        pointer-events: none;
+
+        &.swiper-slide-active {
+          opacity: 1;
+          pointer-events: initial;
+
+          & .p-chara-content__img {
+            img {
+              clip-path: polygon(0 -100%, 0 100%, 200% 100%);
+            }
+          }
+
+          & .p-chara-content__frame {
+            transition: 0.6s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 1;
+            transform: scale(1) translate(0, 0);
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &-content {
+
+    &__inner {}
+
+    &__bg {
+      @include absAll;
+    }
+
+    &__list {
+      @include flex($justify:space-between);
+      flex-direction: column;
+
+      // height: vw(900px, 1920);
+      @include mq-target(sm) {
+        // height: vw(760px, 1920);
+        flex-direction: row-reverse;
+      }
+    }
+
+    &__item {
+
+      &--line {
+        position: absolute;
+        right: 0;
+        padding: 4px 2px 0 0;
+        writing-mode: vertical-rl;
+        text-align: left;
+        z-index: 100;
+        background: $color-key-2;
+
+        @include mq-target(sm) {
+          right: vw(80px, 1920);
+          top: vw(40px, 1920);
+          display: block;
+        }
+
+
+        p {
+          font-weight: 300;
+          font-size: vw(24px, 1920);
+          display: inline-block;
+          padding: 0 2px;
+          color: $color-white;
+        }
+      }
+
+      &--bg {
+        @include absAll;
+        z-index: 0;
+      }
+
+      &--chara {
+        position: relative;
+        z-index: 1;
+        width: 90%;
+        margin: auto;
+        // height: vw(700px, 768);
+
+        @include mq-target(sm) {
+          margin: 0;
+          width: 27.581259vw;
+        }
+
+      }
+
+      &--desc {
+        position: relative;
+        z-index: 20;
+
+
+        @include mq-target(sm) {
+          z-index: 5;
+          padding-top: 1vw;
+          width: 38.875vw;
+        }
+
+        @include mq-target(lg) {
+          width: 32vw;
+        }
+      }
+    }
+
+    &__frame {
+      opacity: 0;
+      // overflow: hidden;
+      transform: translateX(20%);
+      margin: auto;
+
+      @include mq-target(sm) {
+        padding-left: 4vw;
+        border-left: 2px solid $color-key-2;
+
+      }
+
+      @include mq-target(lg) {
+        padding-left: 3vw;
+      }
+
+      &::before {
+        color: $color-key-2;
+        content: "CAST PROFILE";
+        position: absolute;
+        left: 4px;
+        top: 0;
+        writing-mode: vertical-lr;
+        letter-spacing: .1em;
+        font-size: vw(12px, 1920);
+        font-weight: 700;
+        display: none;
+
+        @include mq-target(sm) {
+          display: block;
+        }
+      }
+
+    }
+
+    &__img {
+      position: relative;
+     max-width: 270px;
+     width: 100%;
+      margin: auto;
+      z-index: 10;
+
+      @include mq-target(sm) {
+        max-width: initial;
+        width: 40.4375vw;
+        right: 8.342606vw;
+        top: vw(-20px, 1200);
+      }
+
+      @include mq-target(lg) {
+        width: 32vw;
+        right: 2vw;
+      }
+    }
+  }
+
+  &-prof {
+
+    &__list {
+      @include flex($justify:space-between, $wrap:wrap);
+      flex-direction: row;
+      @include column4(30%);
+      @include mq(sm) {
+        max-width: 580px;
+        margin: auto;
+      }
+
+      @include mq-target(md) {
+        width: 32.875vw;
+      }
+
+      @include mq-target(lg) {
+        width: vw(420px, 1920);
+      }
+
+    }
+
+    &__item {
+
+      margin-top: 14px;
+      padding: 0 0 4px;
+      color: $color-white;
+      border-bottom: 1px solid $color-key-2;
+      width: 30%;
+      
+      @include mq-target(sm) {
+        width: 48%;
+        padding: 0 0 vw(8px, 1920);
+        margin-top: vw(20px, 1920);
+      }
+
+      dl {
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1.2;
+        letter-spacing: .08em;
+        text-align: left;
+        font-size: min(vw(10px, 365), 12px);
+
+
+        @include mq-target(sm) {
+          font-size: vw(12px, 1200);
+        }
+
+
+
+        @include mq-target(lg) {
+          font-size: vw(14px, 1920);
+        }
+
+
+        dt {
+          width: 60px;
+
+          @include mq-target(sm) {
+            width: 36%;
+          }
+        }
+
+        dd {
+          text-align: right;
+          width: calc(100% - 60px);
+
+          @include mq-target(sm) {
+            width: 64%;
+          }
+        }
+      }
+    }
+
+    &__heading {
+
+      font-family: $line-b;
+      font-weight: 900;
+      margin: 20px 0 0;
+      // text-align: left;
+
+      @include mq-target(sm) {
+        margin: 0;
+        text-align: left;
+      }
+
+      h3 {
+        // background: $color-key;;
+        color: transparent;
+        color: $color-key-2;
+        font-size: vw(38px, 768);
+        line-height: 1;
+
+        display: inline-block;
+        text-transform: uppercase;
+
+        @include mq-target(sm) {
+          font-size: vw(38px, 1200);
+
+        }
+
+        @include mq-target(lg) {
+          font-size: vw(46px, 1920);
+        }
+
+
+      }
+
+      p {
+        font-size: vw(16px,768);
+        @include mq-target(sm) {
+          text-align: left;
+          margin-top: vw(4px, 1200);
+          font-size: vw(16px, 1200);
+        }
+        
+        @include mq-target(lg) {
+          margin-top: vw(4px, 1920);
+          font-size: vw(16px, 1920);
+        }
+      }
+    }
+
+    &__cv {
+      display: flex;
+      color: $color-white;
+      justify-content: center;
+      margin: vw(10px, 768) 0 vw(20px, 768);
+      font-size: vw(24px,768);
+
+      @include mq-target(sm) {
+        justify-content: start;
+        font-size: vw(28px, 1200);
+        margin: vw(20px, 1200) 0 vw(10px, 1200);
+      }
+      
+      @include mq-target(lg) {
+        margin: vw(20px, 1920) 0 vw(10px, 1920);
+        font-size: vw(28px, 1920);
+      }
+
+      span {
+        display: block;
+        color: $color-key-2;
+        margin-right: 10px;
+      }
+    }
+
+    &__txt {
+      font-size: min(vw(12px, 365), 16px);
+      line-height: 1.714285714285714;
+
+      font-weight: 400;
+      color: $color-white;
+      margin-top: vw(20px,768);
+
+      @include mq-target(sm) {
+        text-align: left;
+        font-size: vw(12px, 982);
+        margin: vw(30px, 1920) 0 0;
+      }
+
+
+
+      @include mq-target(lg) {
+        font-size: vw(16px, 1920);
+      }
+    }
+  }
+
+
+  &__ttl {
+    width: min(vwpc(200px),250px);
+    margin: 0 auto min(vwpc(24px),36px);
+  }
+
+  &__wrap {
+    position: relative;
+    padding: 0 min(vwpc(20px),84px);
+  }
+
+  &__txt {
+    display: block;
+
+    @include mq-target(sm) {
+      font-size: min(vwpc(14px),16px);
+    }
+
+    &:last-child {
+      margin-top: 1em;
+    }
+  }
+
+}

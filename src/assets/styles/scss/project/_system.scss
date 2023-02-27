@@ -1,0 +1,70 @@
+@use "../foundation"as *;
+
+.p-feature {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0 80px;
+  
+    @include mq-target(sm) {
+      padding: vw(120px, 1920) 0px;
+    }
+
+
+    &__list {
+        // width: 90%;
+        @include flex($align:stretch, $wrap:wrap, $justify:space-between);
+        margin: auto;
+
+        @include mq-target(lg) {
+            // width: 52vw;
+        }
+    }
+
+    &__item {
+        position: relative;
+        // margin-top: 60px;
+        overflow: hidden;
+        width: 84%;
+        margin: auto;
+        // margin-top: 40px;
+        @include mq-target(sm) {
+            width: 46.2%;
+            // margin-top: vw(60px, 1200);
+        }
+
+        @include mq-target(lg) {
+            // margin-top: vw(40px, 1920);
+        }
+
+
+    }
+
+    &__img {
+        margin: 30px 0 10px;
+        position: relative;
+        @include mq-target(sm) {
+            margin: vw(60px,1920) 0 vw(20px,1920);
+        }
+
+        &::after {
+            content: "";
+            @include absAll;
+            background-image: url(../../assets/images/cupon_frame.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            animation: cm_chara_2 6.5s infinite;
+        }
+    }
+
+    &__txt {
+        font-size: 28px;
+        font-size: min(vw(18px,365),26px);
+
+        @include mq-target(sm) {
+            font-size: vw(28px, 1920);
+        }
+    }
+}
+
+

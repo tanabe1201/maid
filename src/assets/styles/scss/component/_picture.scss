@@ -1,0 +1,28 @@
+@use "../foundation" as *;
+
+.c-picture {
+  &__img {
+    margin: 0;
+    display: flex;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1);
+
+    picture {
+      padding-top: 52.25%;
+      display: block;
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}

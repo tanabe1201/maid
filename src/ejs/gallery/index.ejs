@@ -1,0 +1,97 @@
+<% let pageId = 'gallery'; %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<%- include('./../_inc/_header', { pageId: pageId }) %>
+
+
+<main class="l-main">
+    <section id="gallery" class="p-gallery" style="top: -10px;">
+
+        <!-- <div class="smoke smoke__right"></div>
+        <div class="smoke smoke__left"></div> -->
+
+
+
+
+        <div class="p-gallery__inner">
+
+            <div class="p-gallery__main">
+                <div id="swiper03" class="swiper-container p-gallery__slider">
+                    <ul class="swiper-wrapper p-gallery__slidewrap">
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-gallery__tab">
+                    <ul class="p-gallery__list--tab">
+                        <li class="p-gallery__item--tab js-gallery-tab is-active" data-num="0">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="1">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="2">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="3">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="4">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="5">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="6">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="7">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section__bg p-sys__bg"></div>
+</main>
+
+<%- include('./../_inc/_footer', { pageId: pageId }) %>

@@ -1,0 +1,86 @@
+<% let pageId = 'system'; %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<%- include('./../_inc/_header', { pageId: pageId }) %>
+
+<main class="l-main">
+
+
+    <section class="p-work">
+
+        <header class="p-work-header">
+
+            <div class="p-work-header__kv">
+                <div class="p-work-header__gradient"></div>
+                <figure class="p-work-header__img">
+                    <picture>
+                        <img src="../assets/images/mockup_header.jpg" alt="">
+                    </picture>
+                    <figcaption class="p-work-header__caption">
+                        <span>Design Samples</span>
+                        <h3 class="p-work-header__ttl">
+                            ホラーゲーム紹介LP（架空）
+                        </h3>
+                    </figcaption>
+                </figure>
+            </div>
+        </header>
+
+        <div class="p-work__inner">
+            <a href="" class="p-work-content__link">
+                <figure class="p-work-content__img">
+                    <img src="../assets/images/mockup.jpg" alt="">
+                </figure>
+            </a>
+
+            
+            <ul class="p-work-content__list--desc">
+                <li class="p-work-content__item--desc">
+                    <dl class="p-work-content__desc">
+                        <dt>
+                            <img src="../assets/images/svg/icon_pc.svg" alt="">
+                            <span>デザイン</span>
+                        </dt>
+                        <dd>
+                            WEBデザインの基礎やAdobe XDの基本的な操作方法、サイト制作の流れなど、グラフィックデザイナー 尾花大輔ならではのノウハウをお教えします。
+                        </dd>
+                    </dl>
+
+                </li>
+                <li class="p-work-content__item--desc">
+                    <dl class="p-work-content__desc">
+                        <dt>
+                            <img src="../assets/images/svg/icon_pc.svg" alt="">
+                            <span>デザイン</span>
+                        </dt>
+                        <dd>
+                            WEBデザインの基礎やAdobe XDの基本的な操作方法、サイト制作の流れなど、グラフィックデザイナー 尾花大輔ならではのノウハウをお教えします。
+                        </dd>
+                    </dl>
+                </li>
+                <li class="p-work-content__item--desc">
+                    <dl class="p-work-content__desc">
+                        <dt>
+                            <img src="../assets/images/svg/icon_pc.svg" alt="">
+                            <span>デザイン</span>
+                        </dt>
+                        <dd>
+                            WEBデザインの基礎やAdobe XDの基本的な操作方法、サイト制作の流れなど、グラフィックデザイナー 尾花大輔ならではのノウハウをお教えします。
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+</main>
+
+<div class="p-work__btn sc-inview">
+    <a href="https://stnblog.github.io/game_02/">
+        <span>DEMO</span>
+    </a>
+</div>
+
+
+
+<%- include('./../_inc/_footer', { pageId: pageId }) %>

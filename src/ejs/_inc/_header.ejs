@@ -1,0 +1,88 @@
+<% let title = (pageId === 'home') ? jsonData.siteInfo.name : jsonData.pages[pageId].name + jsonData.siteInfo.name%>
+<% let description = jsonData.pages[pageId].description %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="<%= description %>">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@s_tanabe">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css">
+  <link rel="icon" href="<%= filePath %>assets/images/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="<%= filePath %>assets/styles/vendors/lity.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="<%= filePath %>assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
+  <link href="<%= filePath %>assets/styles/style.css" rel="stylesheet">
+
+</head>
+
+
+
+
+<nav class="l-drawer__content js-draw--content">
+
+  <div class="l-drawer__wrap">
+
+    <ul class="l-drawer__list l-drawer__list--menu">
+      <li class="l-drawer__item">
+        <a href="#top" class="js-draw--trigger">
+          <span>top</span>
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#about" class="js-draw--trigger">
+          <span>ABOUT</span>
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#concept" class="js-draw--trigger">
+          <span>concept</span>
+
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#chara" class="js-draw--trigger">
+          <span>character</span>
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#camp" class="js-draw--trigger">
+          <span>campaign</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<body id="top" data-character="1">
+
+  <div class="IEblock"><div class="comment_block"><p>このブラウザは閲覧非対応です。</p></div></div>
+
+  <div class="bg_particles">
+    <canvas></canvas>
+  </div>
+
+  <div id="loading" class="onload">
+    <img class="logo" src="./assets/images/logo.webp" alt="LOADING">
+  </div>

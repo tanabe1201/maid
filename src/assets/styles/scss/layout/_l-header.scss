@@ -1,0 +1,120 @@
+@use "../foundation"as *;
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to right bottom, rgba(34, 33, 33, 0.99), rgba(2, 2, 3, 0.99));    
+  // width: 100%;
+  z-index: 9999;
+  height: 64px;
+  filter: drop-shadow(0 0 0.1115vw rgb(0, 0, 0));
+  border-top: 2px solid $color-key-2;
+  border-bottom: 2px solid $color-key-2;
+  @include mq-target(sm) {
+    height: auto;
+    // padding: 6.266666666666667vw 5.333333333333334vw 0;
+    position: relative;
+    padding: vw(10px, 769) vw(60px, 769) 0;
+    display: block;
+  }
+
+  &__inner {
+    position: relative;
+    @include flex($align:center, $justify:center);
+  }
+
+  &__logo {
+    width: vw(50px, 365);
+    @include mq-target(sm) {
+      width: vw(40px, 769);
+    }
+    a {
+      display: block;
+    }
+  }
+
+  &__wrap {
+    &--pc {
+      position: relative;
+      @include flexCenter;
+      z-index: 5;
+      display: none;
+      @include mq-target(sm) {
+        display: block;
+      }
+    }
+
+    &--sp {
+      display: block;
+      @include mq-target(sm) {
+        display: none;
+      }
+    }
+  }
+
+
+  &-nav {
+    &__list {
+      @include flex($align:center);
+    }
+    &__item {
+      margin-left: vw(14px, 769);
+      font-size: vw(7px, 769);
+      font-weight: 700;
+    }
+  }
+}
+
+
+.l-header {
+
+  @include mq-target(sm) {
+    padding: vw(20px,1920) 0;
+  }
+  &__inner {}
+
+  &-nav {
+    display: block;
+
+    &__list {
+      @include flexCenter;
+      flex-direction: row;
+    }
+
+    &__item {
+      position: relative;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      margin-left: 1.26193265007321vw;
+      @include flexCenter;
+      
+      a {
+        font-family: $shippo;
+        filter: drop-shadow(0 0 0.125vw $color-main);
+        font-size: 1.02489019033675vw;
+        text-transform: uppercase;
+        // width: vw(150px,1920);
+        color: $color-white;
+        padding: vw(4px,1920) vw(6px,1920);
+        display: block;
+        font-size: vw(24px,1920);
+        position: relative;
+        z-index: 1;
+
+        &:hover {
+          &::before {
+            height: 100%;
+          }
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+

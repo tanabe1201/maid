@@ -1,0 +1,126 @@
+@use "../foundation"as *;
+
+.p-shop {
+
+
+
+    &__wrap {
+
+        @include mq-target(sm) {
+            display: flex;
+        }
+    }
+
+    &__head {
+        margin: 0 0 42px 0;   
+        @include mq-target(sm) {
+            margin: 0 4% 0 0;
+            width: 44%;
+        }
+
+        img {
+            border: 3px solid $color-key-2;
+        }
+    }
+
+    &__body {
+        flex: 1 1 auto;
+        text-align: left;
+    }
+
+    &__map {
+        border: 3px solid $color-key-2;
+        position: relative;
+        margin-top: 16px;
+        padding-top: 61.94332%;
+
+        .shop-item__map {
+            @include absAll;
+        }
+    }
+
+    &__list {
+        margin: 20px 0 0;
+        @include mq-target(sm) {
+          margin: min(vw(20px, 769), 40px) 0 0;
+        }
+    }
+
+    &__item {
+        &:not(:first-child) {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-width: 1px;
+            border-top-style: solid;
+            border-top-color: $color-key-2;
+
+            @include mq-target(sm) {
+                margin-top: min(vwpc(20px),30px);
+                padding-top: min(vwpc(20px),30px);
+            }
+
+        }
+
+        dl {
+            display: flex;
+            font-size: min(vw(12px, 365), 18px);
+
+            @include mq-target(sm) {
+                font-size: min(vw(12px, 769),16px);
+            }
+
+            dt {
+                color: $color-key-2;
+                // display: flex;
+                // justify-content: space-between;
+                flex-basis: min(220px, 20vw);
+                @include mq-target(sm) {
+                    flex-basis: min(140px, 10vw);
+                }
+            
+            }
+
+            dd {
+                p {
+                    margin-top: 1em;
+                }
+
+
+                &>:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+    &__heading {
+        color: $color-key-2;
+        font-size: min(vwsp(26px),36px);
+        line-height: 1;
+        @include mq-target(sm) {
+            font-size: min(vwpc(26px),36px);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+[data-character="1"] .p-chara__item--bg:nth-child(1),
+[data-character="2"] .p-chara__item--bg:nth-child(2),
+[data-character="3"] .p-chara__item--bg:nth-child(3),
+[data-character="4"] .p-chara__item--bg:nth-child(4),
+[data-character="5"] .p-chara__item--bg:nth-child(5),
+[data-character="6"] .p-chara__item--bg:nth-child(6),
+[data-character="7"] .p-chara__item--bg:nth-child(7),
+[data-character="8"] .p-chara__item--bg:nth-child(8),
+[data-character="9"] .p-chara__item--bg:nth-child(9),
+[data-character="10"] .p-chara__item--bg:nth-child(10) {
+    opacity: 1;
+}

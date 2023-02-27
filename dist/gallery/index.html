@@ -1,0 +1,230 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ギャラリー - ポートフォリオ</title>
+  <meta name="description" content="説明文">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <meta property="og:site_name" content="">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@s_tanabe">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/yakuhanjp@3.4.1/dist/css/yakuhanjp.min.css">
+  <link rel="icon" href="../assets/images/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="../assets/styles/vendors/lity.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="../assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/styles/style.css" rel="stylesheet">
+
+</head>
+
+
+
+
+<nav class="l-drawer__content js-draw--content">
+
+  <div class="l-drawer__wrap">
+
+    <ul class="l-drawer__list l-drawer__list--menu">
+      <li class="l-drawer__item">
+        <a href="#top" class="js-draw--trigger">
+          <span>top</span>
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#about" class="js-draw--trigger">
+          <span>ABOUT</span>
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#concept" class="js-draw--trigger">
+          <span>concept</span>
+
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#chara" class="js-draw--trigger">
+          <span>character</span>
+        </a>
+      </li>
+      <li class="l-drawer__item">
+        <a href="#camp" class="js-draw--trigger">
+          <span>campaign</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<body id="top" data-character="1">
+
+  <div class="IEblock"><div class="comment_block"><p>このブラウザは閲覧非対応です。</p></div></div>
+
+  <div class="bg_particles">
+    <canvas></canvas>
+  </div>
+
+  <div id="loading" class="onload">
+    <img class="logo" src="./assets/images/logo.webp" alt="LOADING">
+  </div>
+
+
+<main class="l-main">
+    <section id="gallery" class="p-gallery" style="top: -10px;">
+
+        <!-- <div class="smoke smoke__right"></div>
+        <div class="smoke smoke__left"></div> -->
+
+
+
+
+        <div class="p-gallery__inner">
+
+            <div class="p-gallery__main">
+                <div id="swiper03" class="swiper-container p-gallery__slider">
+                    <ul class="swiper-wrapper p-gallery__slidewrap">
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                        </li>
+                        <li class="swiper-slide p-gallery__slide">
+                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-gallery__tab">
+                    <ul class="p-gallery__list--tab">
+                        <li class="p-gallery__item--tab js-gallery-tab is-active" data-num="0">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="1">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="2">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="3">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="4">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="5">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_03.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="6">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-gallery__item--tab js-gallery-tab" data-num="7">
+                            <figure>
+                                <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section__bg p-sys__bg"></div>
+</main>
+
+
+
+
+<a href="#top" class="c-sec__top sc-inview">
+  <img src="./assets/images/top_icon.png" alt="">
+</a>
+
+<footer class="l-footer" id="footer">
+  <!-- <div class="c-line c-line--reverse"></div> -->
+  <!-- <div class="section__bottom inview"></div> -->
+  <div class="l-footer__inner">
+
+
+  </div>
+
+</footer>
+
+<!-- vendors -->
+<script src="../assets/scripts/vendors/jquery-3.6.0.min.js"></script>
+<script src="../assets/scripts/vendors/rellax.min.js"></script>
+<script src="../assets/scripts/vendors/lity.min.js"></script>
+<script src="../assets/scripts/vendors/jquery.matchHeight-min.js"></script>
+<script src="../assets/scripts/vendors/intersection-observer.js"></script>
+<script src="../assets/scripts/vendors/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+
+<script>
+  var rellax = new Rellax('.js-rellax', {
+    center: true,
+  });
+</script>
+
+
+<!-- scripts -->
+<script src="../assets/scripts/anim.js"></script>
+<script src="../assets/scripts/swiper.js"></script>
+<script src="../assets/scripts/main.js"></script>
+
+<!-- 
+ -->
+
+</body>
+
+</html>

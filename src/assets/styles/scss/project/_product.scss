@@ -1,0 +1,108 @@
+@use "../foundation"as *;
+
+.p-product {
+    position: relative;
+    z-index: 10;
+
+
+    &__list {
+
+        @include mq-target(sm) {
+            @include column4(32%);
+        }
+    }
+
+    &__item {
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 10px;
+
+        @include mq-target(sm) {
+            width: 48%;
+        }
+
+        @include mq-target(md) {
+            width: 32%;
+        }
+
+
+        &Inner {
+            width: min(vwsp(280px),470px);
+            margin: auto;
+
+            @include mq-target(sm) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__img {
+        position: relative;
+    }
+
+    &__details {
+        padding: 0px 4%;
+        text-align: left;
+
+        dt {
+            font-size: min(vwsp(12px), 18px);
+            text-transform: uppercase;
+            font-weight: 900;
+            @include mq-target(sm) {
+                font-size: min(vwpc(10px), 14px);
+            }
+
+        }
+
+        dd {
+            position: relative;
+            font-size: min(vwsp(12px), 16px);
+            height: 30px;
+            @include flex($align:center);
+            padding-left: 34px;
+
+            border-bottom: 1px solid $color-grey-dark-1;
+
+            @include mq-target(sm) {
+                font-size: min(vwpc(10px), 14px);
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                background: $color-green-light-2;
+                @include absolute($top:4px, $left:0);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                @include absolute($top:10px, $left:5px);
+                width: 10px;
+                height: 5px;
+                border-left: 2px solid $color-white;
+                border-bottom: 2px solid $color-white;
+                transform: rotate(-45deg);
+            }
+
+            & .-price {
+                padding-left: 6px;
+                font-size: 1.2rem;
+            }
+
+
+
+            &:first-of-type {
+                margin: 10px 0 0;
+            }
+
+            &:last-of-type {
+                border: none;
+            }
+        }
+    }
+}

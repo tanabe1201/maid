@@ -1,0 +1,465 @@
+@use "../foundation"as *;
+@use "sass:math";
+
+
+.js-scroll--scaleUp {
+  opacity: 0;
+  transform: scale(1.2);
+
+  &.is-anim {
+    filter: blur(0);
+    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.js-scroll--slideView {
+  -webkit-clip-path: inset(0 100% 0 0);
+  clip-path: inset(0 100% 0 0);
+  transition: all 0.5s 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+  &.is-anim {
+    -webkit-clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0);
+  }
+
+  &-delay {
+    -webkit-clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0);
+    transition: all 0.5s 0.1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+    &.is-anim {
+      -webkit-clip-path: inset(0 0 0 0);
+      clip-path: inset(0 0 0 0);
+      @include animation($name: kf-slide-view,
+        $duration: 1s,
+        $timing-function: ease,
+        $fill-mode: both);
+
+      @for $i from 1 through 9 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.1s;
+        }
+      }
+    }
+  }
+}
+
+
+// fade
+//--------------------------------------------------------------------
+$fades:("Up": translateY(30px),
+  "Down": translateY(-30px),
+  "Left": translateX(30px),
+  "Right": translateX(-30px));
+
+@each $key,
+$fade in $fades {
+
+  .js-scroll--fade#{$key} {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: ($fade);
+    transition: 0.6s 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.44);
+
+    &.is-anim {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+.js-scroll--fade {
+  opacity: 0.0;
+  transition-duration: .5s;
+  transition-property: opacity,-webkit-transform;
+  transition-property: transform,opacity;
+  transition-property: transform,opacity,-webkit-transform;
+  transition-timing-function: cubic-bezier(.75,0,.25,1);
+  transform: scale(1) translate3d(0,5vw,0);
+
+
+  &.is-anim {
+    opacity: 1.0;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+
+// slide
+//--------------------------------------------------------------------
+$slides:("Up": translateY(20%),
+  "Down": translateY(-20%),
+  "Left": translateX(20%),
+  "Right": translateX(-20%));
+
+@each $key,
+$slide in $slides {
+
+  .js-scroll--slide#{$key} {
+    opacity: 0;
+    overflow: hidden;
+    transform: ($slide);
+    // transform: scale(1);
+    transition: 0.8s 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    &.is-anim {
+      opacity: 1;
+      overflow: visible;
+      transform: scale(1) translate(0, 0);
+    }
+  }
+}
+
+
+// cover
+//--------------------------------------------------------------------
+$covers:("Up": translateY(20%),
+  "Down": translateY(-100%),
+  "Left": translateX(100%),
+  "Right": translateX(-100%));
+
+@each $key,
+$cover in $covers {
+
+  .js-scroll--cover#{$key} {
+    overflow: hidden;
+
+
+    &::before,
+    &::after {
+      content: '';
+      @include absolute($left:0, $top:0);
+      height: 100%;
+      width: 100%;
+      transition: all cubic-bezier(0.1, 1, 0.4, 1) 0.6s 0.4s;
+    }
+
+    &::before {
+      background: $color-key-2;
+
+    }
+
+    &::after {
+      background: $color-key-2;
+
+    }
+
+
+    &.is-anim {
+
+      &::before,
+      &::after {
+        transform: ($cover);
+      }
+    }
+  }
+}
+
+
+@keyframes swing2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(4deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-4deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+// rotate
+//--------------------------------------------------------------------
+.js-scroll--rotate {
+  opacity: 0;
+
+  &.is-anim {
+    opacity: 1;
+    @include animation($name: kf-img-rotate,
+      $duration: 2s,
+      $timing-function: cubic-bezier(0.23, 1, 0.32, 1),
+      $fill-mode: both);
+  }
+
+  &-delay {
+    opacity: 0;
+    // transition: opacity .1s, transform 1.2s;
+    // transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+    &.is-anim {
+      opacity: 1;
+      @include animation($name: kf-img-rotate,
+        $duration: 1.2s,
+        $timing-function: cubic-bezier(0.23, 1, 0.32, 1),
+        $fill-mode: both);
+
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          animation-delay: $i * 0.2s;
+        }
+      }
+    }
+  }
+}
+
+.js-scroll--view {
+  opacity: 0;
+  transform: scale(0.9);
+  filter: blur(10px);
+  // transition-delay: 2s;
+
+  &.is-anim {
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: translateY(60px);
+    filter: blur(0);
+  }
+}
+
+// turn
+//--------------------------------------------------------------------
+.js-scroll--turn {
+  transition: clip-path 1s cubic-bezier(0.285, 0.435, 0.45, 0.86);;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+
+  &.is-anim {
+    clip-path: polygon(0 0, 200% 0, 0 200%);
+  }
+}
+
+// scale
+//--------------------------------------------------------------------
+.js-scroll {
+
+  &--scale {
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+
+    &.is-anim {
+      opacity: 1;
+      @include animation($name: kf-img-show,
+        $duration: 1s,
+        $timing-function: cubic-bezier(0.61, 1, 0.88, 1),
+        $fill-mode: both);
+    }
+
+    &-delay {
+      opacity: 0;
+
+      &.is-anim {
+        opacity: 1;
+        @include animation($name: kf-img-show,
+          $duration: 1s,
+          $timing-function: ease,
+          $fill-mode: both);
+
+        @for $i from 1 through 9 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.1s;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// char
+//--------------------------------------------------------------------
+
+.animate-heading {
+  opacity: 0;
+
+  &.inview {
+    opacity: 1;
+
+    & .char {
+      display: inline-block;
+    }
+  }
+
+  & .char {
+    opacity: 0;
+  }
+}
+
+.animate-heading.inview .char {
+  @include animation($name: kf-animate-chars,
+    $duration: 1.2s,
+    $timing-function: cubic-bezier(0.39, 1.57, 0.58, 1),
+    $fill-mode: both);
+
+  @for $i from 1 through 30 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
+}
+
+// char
+//--------------------------------------------------------------------
+
+@function rand($min, $max) {
+  @return random() * ($max - $min)+$min;
+}
+
+$animation-duration: 3s;
+$glitch-duration: 20%;
+$glitch-frequency: 10;
+$glitch-interval: math.div($glitch-duration, $glitch-frequency);
+
+@mixin rgb-shift($name) {
+  @keyframes rgb-shift-#{$name} {
+    @for $i from 0 to $glitch-frequency {
+      #{$i * $glitch-interval} {
+        transform: translate(#{rand(-2, 2) * 1%},
+          #{rand(-0.5, 0.5) * 1%});
+      }
+    }
+
+    #{$glitch-duration},
+    100% {
+      transform: none;
+    }
+  }
+
+  animation: rgb-shift-#{$name} $animation-duration steps(1, jump-end) infinite alternate both;
+}
+
+@mixin glitch($name) {
+  @keyframes glitch-#{$name} {
+    @for $i from 0 to $glitch-frequency {
+      $left: 0%;
+      $right: 100%;
+      $top: rand(0, 90) * 1%;
+      $bottom: $top + rand(1, 10) * 1%;
+
+      #{$i * $glitch-interval} {
+        clip-path: polygon($left $top,
+            $right $top,
+            $right $bottom,
+            $left $bottom);
+        transform: translate(#{rand(-8, 8) * 1%},
+          #{rand(-0.5, 0.5) * 1%});
+      }
+    }
+
+    #{$glitch-duration},
+    100% {
+      clip-path: none;
+      transform: none;
+    }
+  }
+
+  animation: glitch-#{$name} $animation-duration linear infinite alternate both;
+}
+
+body {
+  margin: 0;
+}
+
+.glitch {
+  background: #000 no-repeat center;
+  background-size: 0;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &::before,
+  &::after,
+  .channel {
+    background: inherit;
+    background-size: cover;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &::before {
+    @include glitch(before);
+    content: "";
+  }
+
+  &::after {
+    @include glitch(after);
+    content: "";
+  }
+
+  .channel {
+    mix-blend-mode: screen;
+
+    &::before {
+      bottom: 0;
+      content: "";
+      display: block;
+      mix-blend-mode: multiply;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  .r {
+    @include rgb-shift(r);
+
+    &::before {
+      background: #f00;
+    }
+  }
+
+  .g {
+    @include rgb-shift(g);
+
+    &::before {
+      background: #0f0;
+    }
+  }
+
+  .b {
+    @include rgb-shift(b);
+
+    &::before {
+      background: #00f;
+    }
+  }
+}
+
+
+
+
+@keyframes scale_anime {
+  0% {
+    transform: scale(0.75);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05, 1);
+    opacity: 1;
+  }
+  80% {
+    transform: scale(0.9, 0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

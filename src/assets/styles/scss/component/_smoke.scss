@@ -1,0 +1,122 @@
+@use "../foundation" as *;
+
+.c-smoke {
+  position: absolute;
+  padding-top: 3.25%;
+  background: linear-gradient(180deg, rgba(6, 6, 9, 0), $color-bg 50%);
+  z-index: 30;
+  display: block;
+  height: 30px;
+  width: 100%;
+
+  @include mq-target(sm) {
+    width: 100%;
+  }
+
+  &--chara {
+    @include mq-target(sm) {
+      width: 100%;
+    }
+  }
+
+  &__top {
+    top: 0;
+    background: linear-gradient(360deg, rgba(9, 8, 6, 0), $color-bg 80%);
+  }
+
+  &__bottom {
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(9, 8, 6, 0), $color-bg 80%);
+  
+  }
+}
+
+
+
+
+.c-icon {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 700;
+  
+  &__sns {
+    // flex-flow: column;
+    // align-items: center;
+    position: fixed;
+    // right: min(0.4rem, 40px);
+    right: 3%;
+    top: calc(50% + 1.5vw + 0.29rem);
+    transform: translateY(-60%);
+    width: 2.08%;
+    bottom: initial;
+  }
+  
+  &__list {
+    &--sns {
+      line-height: 0;
+      width: 100%;
+      border-top: 1px solid #FFF;
+      border-bottom: 1px solid #FFF;
+      margin: 10px 0;
+      padding: 10px 0;
+
+      li:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+
+      li {
+        a {
+          display: block;
+          img {
+            width: 60%;
+            height: auto;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+  
+  
+  &__scroll {
+    left: 3%;
+    margin: auto;
+    height: 100px;
+    
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      margin: auto;
+      display: block;
+      width: 2px;
+    }
+
+    &::before {
+      height: 100px;
+      background: $color-grey-light-4;
+      opacity: 0.25;
+    }
+
+    &::after {
+      background-image: linear-gradient(to right bottom, rgba(216, 18, 18, 0.85), rgba(197, 17, 17, 0.85));
+      height: 20px;
+      animation: scrollPc 2s ease infinite;
+    }
+  }
+
+  &__txt {
+    color: $color-main;
+    display: block;
+    writing-mode: vertical-rl;
+    margin: auto;
+    
+    &--scroll {
+      position: absolute;
+      top: 0;
+      left: 8px;
+    }
+  }
+}

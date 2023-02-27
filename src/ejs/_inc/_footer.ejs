@@ -1,0 +1,50 @@
+<% let filePath = jsonData.pages[pageId].filePath %>
+
+
+<a href="#top" class="c-sec__top sc-inview">
+  <img src="./assets/images/top_icon.png" alt="">
+</a>
+
+<footer class="l-footer" id="footer">
+  <!-- <div class="c-line c-line--reverse"></div> -->
+  <!-- <div class="section__bottom inview"></div> -->
+  <div class="l-footer__inner">
+
+
+  </div>
+
+</footer>
+
+<!-- vendors -->
+<script src="<%= filePath %>assets/scripts/vendors/jquery-3.6.0.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/rellax.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/lity.min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/jquery.matchHeight-min.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/intersection-observer.js"></script>
+<script src="<%= filePath %>assets/scripts/vendors/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+
+<script>
+  var rellax = new Rellax('.js-rellax', {
+    center: true,
+  });
+</script>
+
+
+<!-- scripts -->
+<script src="<%= filePath %>assets/scripts/anim.js"></script>
+<script src="<%= filePath %>assets/scripts/swiper.js"></script>
+<script src="<%= filePath %>assets/scripts/main.js"></script>
+
+<!-- <% if (pageId === 'home'){ %>
+<% } else if (pageId === 'about') { %>
+<% } else if (pageId === 'work') { %>
+<% } else { %>
+<% } %> -->
+
+</body>
+
+</html>

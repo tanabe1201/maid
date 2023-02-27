@@ -1,0 +1,67 @@
+@use "../foundation"as *;
+
+
+.p-event {
+
+  &__ttl {
+    font-size: min(vw(20px, 365), 32px);
+    font-family: $shippo;
+    line-height: min(vw(24px, 365), 40px);;
+    color: $color-key-2;
+    padding: min(vwsp(4px), 10px) 0 min(vwsp(16px), 24px);
+    border-bottom: 1px solid $color-key-2;
+    @include mq-target(sm) {
+      font-size: min(vw(36px, 769), 48px);
+      line-height: min(vw(46px, 769), 60px);
+      padding: min(vw(10px, 769), 20px) 0 min(vw(24px, 769), 30px);
+    }
+  }
+
+  &__img {
+    overflow: hidden;
+    border: 3px solid $color-key-2;
+  }
+
+  &__list {
+    margin: vwsp(20px) 0;
+    @include mq-target(sm) {
+      margin: min(vwpc(24px), 30px) 0 min(vwpc(32px), 50px);
+    }
+  }
+
+  &__item {
+    text-align: left;
+    margin-bottom: min(vw(16px, 365), 28px);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    dl {
+      // font-weight: bold;
+      font-size: min(vw(12px, 365), 18px);
+      dt {
+        color: $color-key-2;
+      }
+    }
+    @include mq-target(sm) {
+      margin-bottom: min(vw(18px, 769), 28px);
+      dl {
+        display: flex;
+        font-size: min(vw(16px, 769), 20px);
+        dt {
+          flex-basis: min(220px, 20vw);
+
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+
+
+}

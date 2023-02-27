@@ -1,0 +1,110 @@
+@use "../foundation"as *;
+
+.p-kv {
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .59) 11%, rgba(0, 0, 0, .74) 15%, rgba(0, 0, 0, .85) 19%, rgba(0, 0, 0, .93) 23%, rgba(0, 0, 0, .98) 26%, #000 30%, #000 100%);
+    height: vwsp(400px);
+
+    @include mq-target(sm) {
+        height: vwpc(400px);
+        margin: 0;
+    }
+
+    &::before,
+    ::after {
+        content: "";
+        @include absAll;
+    }
+
+    &::before {
+        z-index: -1;
+        background: url(../../assets/images/kv_sp.jpg) no-repeat 0 0/cover;
+
+        @include mq-target(sm) {
+            background: url(../../assets/images/about_bg.jpg) no-repeat 0 0/cover;
+        }
+    }
+
+    &::after {
+        content: "";
+        @include absAll;
+        background: url(../../assets/images/frame_sp.webp) no-repeat 0 0/100%;
+
+        @include mq-target(sm) {
+            background: url(../../assets/images/frame.webp) no-repeat 0 0/100%;
+            z-index: 1;
+        }
+    }
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: vwsp(400px);
+
+        @include mq-target(sm) {
+            height: vwpc(400px);
+            margin: 0;
+        }
+    }
+
+    &__catch {
+        position: absolute;
+        z-index: 1;
+
+        @include mq(sm) {
+            @include absCenter;
+            top: 80vw;
+        }
+
+        @include mq-target(sm) {
+            left: 18.07143vw;
+            top: 15.14286vw;
+        }
+
+        h1 {
+            position: relative;
+            display: block;
+            width: vw(240px, 365);
+            transform: scale(1.6) translateX(25%);
+            opacity: 0;
+            transition: 1.6s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+            @include mq-target(sm) {
+                width: 34vw;
+                margin: auto;
+            }
+
+        }
+    }
+
+    &__obj {
+        position: absolute;
+        top: 40vw;
+        right: 6vw;
+        z-index: -1;
+
+        @include mq(sm) {
+            @include absCenter;
+            width: 80vw;
+        }
+
+        @include mq-target(sm) {
+            top: 7.4vw;
+            width: 50vw;
+        }
+    }
+
+}
+
+#keyvisual.open .p-kv__inner .p-kv__catch h1 {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+}
+
+#keyvisual.open .p-kv__inner .p-kv__txt span {
+    opacity: 1;
+    transform: translateY(0);
+}

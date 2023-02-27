@@ -1,0 +1,171 @@
+@use "../foundation"as *;
+
+.l-drawer {
+  &__trigger {
+    position: relative;
+    z-index: 999999;
+    position: fixed;
+    top: 24px;
+    right: 2.3%;
+    cursor: pointer;
+    width: 42px;
+    height: 12px;
+    margin-left: 2.666666666666667vw;
+    @include flex($align:center, $justify:center);
+
+    .-line {
+      display: block;
+      background: $color-white;
+      height: 1px;
+      position: relative;
+      z-index: 999;
+      transition: 0.1s background-color cubic-bezier(0.32, 0, 0.67, 0);
+      width: 100%;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        @include absolute($left:0);
+        background: $color-white;
+        height: 100%;
+        width: 100%;
+        transition: 0.2s all cubic-bezier(0.12, 0, 0.39, 0);
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+    }
+
+    &.is-active {
+      .-line {
+        background: transparent;
+
+        &::before {
+          top: 0;
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+
+  &__content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 64px;
+
+    text-align: center;
+    z-index: 9990001;
+    // opacity: 0;
+    transition: 0.4s;
+    width: 100%;
+    // @include flex($align:center,$justify:center);
+    // transform: translateX(100%);
+    z-index: 998;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    @include flexCenter;
+    flex-direction: column;
+    pointer-events: none;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+    &.is-active {
+      transform: scale(1, 1);
+      pointer-events: initial;
+    }
+  }
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__logo {
+    width: min(700px, 100%);
+    margin: auto;
+  }
+
+  &__list {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    @include flexCenter;
+    &--menu {
+
+    }
+  }
+
+  &__item {
+    padding: 4px 0;
+    width: 100%;
+    border-bottom: 2px solid $color-key-2;
+    background: linear-gradient(to right bottom, rgba(34, 33, 33, 1), rgba(2, 2, 3, 1));
+
+
+    span {
+      color: $color-white;
+      font-size: 18px;
+      display: block;
+    }
+
+
+    a,
+    button {
+      // text-align: left;
+      display: block;
+      width: 100%;
+      font-weight: 500;
+      line-height: 1.7;
+      text-transform: uppercase;
+
+      .-en {
+        display: block;
+        letter-spacing: 0.1em;
+
+        display: none;
+      }
+
+      .-ja {
+        display: block;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__drop {
+    position: relative;
+    padding: 0;
+    text-align: left;
+  }
+
+  &__body {
+    width: 56%;
+    @include flex($align:center);
+    padding-left: 5%;
+
+  }
+}
+
+
+
+
+
+
+
+
+.lock {
+  position: static;
+  overflow: hidden;
+  top: 0px;
+}

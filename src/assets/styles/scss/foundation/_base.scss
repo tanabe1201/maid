@@ -1,0 +1,106 @@
+@use "../foundation"as *;
+
+html {
+	height: -webkit-fill-available;
+    -webkit-text-size-adjust: 100%;
+	// font-size: 62.5%;
+}
+
+body {
+	position: relative;
+	font-weight: 500;
+	// font-size: 62.5%;
+	// letter-spacing: 0.05em;
+	text-align: center;
+	font-feature-settings: "palt";
+	height: 100%;
+	margin: 0;
+	color: $color-white;
+	line-height: 1.6;
+	font-family: $shippo, Arial, sans-serif;
+	-webkit-text-size-adjust: 100%
+}
+
+* {
+	box-sizing: border-box
+}
+
+a {
+	text-decoration: none
+}
+
+// a:link {
+// 	color: #25a
+// }
+
+a:visited,
+a:hover,
+a:active {
+	// color: #71a
+}
+
+ul li {
+	list-style: none;
+}
+
+img {
+	width: 100%;
+	vertical-align: bottom
+}
+
+@font-face {
+	/*フォントの名前*/
+	font-family: "line-r";
+	/*フォントファイルへのパス（複数指定の場合、上から順に読み込まれる）*/
+	src: url("../../assets/font/LINESeedJP_OTF_Rg.woff") format("woff"),
+}
+
+@font-face {
+	/*フォントの名前*/
+	font-family: "line-b";
+	/*フォントファイルへのパス（複数指定の場合、上から順に読み込まれる）*/
+	src: url("../../assets/font/LINESeedJP_OTF_Bd.woff") format("woff"),
+}
+
+
+.u-dp-pc {
+	display: block;
+
+	@include mq(md) {
+		display: none;
+	}
+
+	&--sm {
+		display: block;
+
+		@include mq(sm) {
+			display: none;
+		}
+	}
+}
+
+
+.u-dp-sp {
+	display: none;
+
+	@include mq(md) {
+		display: block;
+	}
+
+	&--sm {
+		display: none;
+
+		@include mq(sm) {
+			display: block;
+		}
+	}
+}
+
+
+.u-flexbox {
+	display: flex;
+}
+
+.u-flexbox-wrap {
+	flex-wrap: wrap;
+}

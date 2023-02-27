@@ -1,0 +1,171 @@
+<% let pageId = 'character'; %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<%- include('./../_inc/_header', { pageId: pageId }) %>
+
+
+<main class="l-main">
+    <section id="chara" class="p-chara">
+        <!-- 
+        <h2 class="c-sec__ttl inview">
+            <span class="-en">Character</span>
+            <span class="-ja">キャラクター紹介</span>
+        </h2> -->
+
+
+        <div class="p-chara__inner">
+
+
+            <!-- <div class="smoke smoke--chara smoke__right smoke__right--chara"></div>
+            <div class="smoke smoke--chara smoke__left smoke__left--chara"></div> -->
+
+
+
+            <div class="p-chara__bg">
+                <ul class="p-chara__list--bg">
+                    <li class="p-chara__item--bg p-chara__item--bg01"></li>
+                    <li class="p-chara__item--bg p-chara__item--bg02"></li>
+                    <li class="p-chara__item--bg p-chara__item--bg03"></li>
+                </ul>
+            </div>
+
+
+            <div class="p-chara__main">
+
+                <div id="swiper02" class="swiper-container p-chara__slider">
+                    <ul class="swiper-wrapper p-chara__slidewrap">
+                        <li class="swiper-slide p-chara__slide">
+                            <div class="inview js-scroll--coverLeft">
+                                <div class="p-chara__head p-chara__head--01">
+                                    <p class="p-chara__title inview js-scroll--fadeUp">“キャラクターの肩書”</p>
+                                    <h3 class="p-chara__name inview js-scroll--fadeUp">キャラクター01</h3>
+                                    <p class="p-chara__txt inview js-scroll--fadeUp">
+                                        <span>
+                                            親譲りの無鉄砲で小供の時から損ばかりしている。<br>小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。
+                                        </span>
+                                    </p>
+                                    <ul class="p-chara__list--ss inview">
+                                        <li class="p-chara__item--ss">
+                                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                                        </li>
+                                        <li class="p-chara__item--ss">
+                                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="p-chara__foot">
+                                    <div class="p-chara__footInner">
+                                        <figure class="p-chara__img">
+                                            <img src="../../assets/images/girl_01.png" alt=""
+                                                class="inview js-scroll--fadeUp">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide p-chara__slide">
+                            <div class="inview js-scroll--coverLeft">
+                                <div class="p-chara__head p-chara__head--01">
+                                    <p class="p-chara__title">“キャラクターの肩書”</p>
+                                    <h3 class="p-chara__name">キャラクター02</h3>
+                                    <p class="p-chara__txt">
+                                        <span>
+                                            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。
+                                        </span>
+                                    </p>
+                                    <ul class="p-chara__list--ss">
+                                        <li class="p-chara__item--ss">
+                                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                                        </li>
+                                        <li class="p-chara__item--ss">
+                                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="p-chara__foot">
+                                    <div class="p-chara__footInner">
+                                        <figure class="p-chara__img">
+                                            <img src="../../assets/images/girl_04.png" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="swiper-slide p-chara__slide">
+                            <div class="inview js-scroll--coverLeft">
+                                <div class="p-chara__head p-chara__head--01">
+                                    <p class="p-chara__title">“キャラクターの肩書”</p>
+                                    <h3 class="p-chara__name">キャラクター03</h3>
+                                    <p class="p-chara__txt">
+                                        <span>
+                                            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。
+                                        </span>
+                                    </p>
+                                    <ul class="p-chara__list--ss">
+                                        <li class="p-chara__item--ss">
+                                            <img src="../../assets/images/chara_bg_01.jpg" alt="">
+                                        </li>
+                                        <li class="p-chara__item--ss">
+                                            <img src="../../assets/images/chara_bg_02.jpg" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="p-chara__foot">
+                                    <div class="p-chara__footInner">
+                                        <figure class="p-chara__img">
+                                            <img src="../../assets/images/girl_05.png" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-chara__tab">
+                    <ul class="p-chara__list--tab">
+                        <li class="p-chara__item--tab js-chara-tab is-active inview js-scroll--scale-delay"
+                            data-num="0">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_03.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-chara__item--tab js-chara-tab inview js-scroll--scale-delay" data-num="1">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_01.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-chara__item--tab js-chara-tab inview js-scroll--scale-delay" data-num="2">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_02.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-chara__item--tab js-chara-tab inview js-scroll--scale-delay">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_03.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-chara__item--tab js-chara-tab inview js-scroll--scale-delay">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_03.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-chara__item--tab js-chara-tab inview js-scroll--scale-delay">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_03.png" alt="">
+                            </figure>
+                        </li>
+                        <li class="p-chara__item--tab js-chara-tab inview js-scroll--scale-delay">
+                            <figure>
+                                <img src="../../assets/images/chara_tab_03.png" alt="">
+                            </figure>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<%- include('./../_inc/_footer', { pageId: pageId }) %>

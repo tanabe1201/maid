@@ -1,0 +1,142 @@
+@use "../foundation"as *;
+
+
+.p-camp {
+
+    &__ttl {
+        margin: auto;
+        width: 50.753425vw;
+    
+        @include mq-target(sm) {
+          width: 24vw;
+        }
+    
+        @include mq-target(lg) {
+          width: 18vw;
+        }
+    
+      }
+
+
+    &__txt {
+        margin-top: 20px;
+        font-size: min(vw(10px,365),16px);
+        @include mq-target(sm) {
+            font-size: vw(16px,1200);
+        }
+        
+        @include mq-target(lg) {
+            font-size: vw(18px,1920);
+        }
+    }
+
+
+
+    &__img {
+        position: relative;
+        // width: vw(200px,365);
+        width: vw(200px,365);
+        margin: vw(40px,768) auto;
+        @include mq-target(sm) {
+            margin: vw(40px,1200) auto;
+            width: 28vw;
+        }
+
+        @include mq-target(lg) {
+            margin: vw(60px,1920) auto;
+            width: 20vw;
+        }
+
+        img {
+            // transform: rotate(-4deg);
+        }
+    }
+
+    &__box {
+        position: relative;
+        margin-top: vw(60px,768);
+        padding-top: vw(60px,768);
+        @include mq-target(sm) {
+            margin-top: vw(60px,1920);
+            padding-top: vw(60px,1920);
+        }
+
+        &::before {
+            content: "";
+            opacity: 0.25;
+            @include absAll;
+            height: 1px;
+            width: 100%;
+            background: $color-key-2;
+        }
+
+    }
+
+    &__list {
+        position: relative;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 1px;
+            background: $color-key-2;
+            width: 0;
+            opacity: 0.5;
+            transition: all 1s ease;
+            filter: drop-shadow(0 0 0.1115vw black);
+            transform: translateZ(0px);
+        }
+    }
+
+    &__item {
+        width: 100%;
+        margin-top: 10px;
+        @include flexCenter;
+        dl {
+            @include flex($align:center,$justify:center);
+            width: 100%;
+            margin: auto;
+            font-size: min(vw(10px,365),16px);
+            @include mq-target(sm) {
+                font-size: vw(16px,1200);
+
+            }
+            @include mq-target(lg) {
+                font-size: vw(16px,1920);
+
+            }
+
+            dt {
+                margin-right: 2%;
+                width: vw(160px,768);
+                @include mq-target(sm) {
+                    width: vw(140px,1200);
+                }
+
+                @include mq-target(lg) {
+                    width: vw(160px,1920);
+                }
+
+                span {
+                    width: 100%;
+                    display: inline-block;
+                    padding: vw(2px,768) vw(8px,768);
+                    border-radius: 20px;
+                    background: $color-red;
+                    color: $color-white;
+
+                    @include mq-target(sm) {
+                        padding: vw(2px,1920) vw(8px,1920);
+                    }
+                }
+            }
+
+            dd {
+                text-align: left;
+                font-weight: 900;
+            }
+        }
+    }
+}

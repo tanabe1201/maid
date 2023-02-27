@@ -1,0 +1,145 @@
+@use "../foundation"as *;
+
+.p-faq {
+  background: transparent;
+    &:before,&:after {
+      display: none;
+    }
+
+    &__inner {
+      @include mq-target(sm) {
+        // padding: vw(60px, 1920) 0px;
+      }
+      @include mq-target(lg) {
+        // width: vw(1100px, 1920);
+
+      }
+    }
+
+    &__list {
+      @include maxWidth(840px);
+      // overflow-y: scroll;
+      // overflow-x: hidden;
+      // height: 250px;
+      padding: 0 4%;
+      margin-top: 30px;
+
+      @include mq-target(sm) {
+        max-width: fit-content;
+        // width: vw(900px,1920);
+        // height: vw(280px,1920);
+        margin-top: vw(40px,1920);
+      }
+    }
+  
+    &__body {
+      border-top: 1px dashed $color-key-2;
+      padding: 4%;
+    }
+  
+    &__item {
+      // background: linear-gradient(to right bottom, rgba(34, 33, 33, 0.99), rgba(2, 2, 3, 0.99));    
+      position: relative;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #BD9F6D;
+      
+  
+      .js-acc--trigger {
+        cursor: pointer;
+        position: relative;
+        padding: 10px 20px 10px 76px;
+        padding: 14px 16px 14px 12px;
+        @include flex($align:center, $justify:space-between);
+        
+        @include mq-target(sm) {
+            // padding: vw(14px,1920) vw(24px,1920) vw(14px,1920) vw(76px,1920);
+        }
+  
+
+
+      }
+      &:not(:last-child) {
+        // margin: 0 0 16px;
+      }
+    }
+  
+    &__btn {
+      position: relative;
+      width: 6.1875vw;
+      height: 6.1875vw;
+      position: relative;
+      @include mq-target(sm) {
+        width: vw(42px,1920);
+        height: vw(42px,1920);
+      }
+  
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        transition: .3s;
+        background: $color-key-2;
+        @include absCenter;
+      }
+  
+      &::before {
+        height: 1px;
+        width: 6.1875vw;
+        @include mq-target(sm) {
+          width: vw(26px,1920);
+        }
+      }
+  
+      &::after {
+        width: 1px;
+        height: 6.1875vw;
+        @include mq-target(sm) {
+          height: vw(26px,1920);
+
+        }
+      }
+    }
+  
+    &__heading {  
+      &--title {
+        text-align: left;
+        font-size: 10px;
+        @include mq-target(sm) {
+          // font-size: 16px;
+          font-size: 14px;
+        }
+        @include mq-target(lg) {
+        }
+      }
+    }
+  
+    &__txt {
+      a {
+        color: $color-white;
+        font-feature-settings: "palt";
+        text-align: left;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        font-size: 10px;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        transition: opacity 0.2s ease;
+        font-size: vw(14px,768);
+        @include mq-target(sm) {
+          font-size: vw(14px,1200);
+        }
+        @include mq-target(lg) {
+            font-size: vw(14px,1920);
+        }
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+    }
+  
+  
+  }
+  

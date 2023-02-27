@@ -1,0 +1,11 @@
+@use "../foundation"as *;
+
+
+.lity-close {
+    position: absolute;
+    color: $color-key-2;
+}
+
+.lity-wrap {
+    cursor: pointer;
+}

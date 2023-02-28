@@ -67,7 +67,7 @@
 
     @include mq-target(sm) {
       width: min(vw(720px,769),1100px);
-      padding: min(vw(60px,769),80px) min(vw(60px,769),100px) min(vw(60px,769),80px);
+      padding: min(vw(60px,769),80px) min(vw(60px,769),100px) min(vw(40px,769),60px);
     }
 
     &::before,&::after {

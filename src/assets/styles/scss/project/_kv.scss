@@ -95,6 +95,10 @@
             top: 7.4vw;
             width: 50vw;
         }
+
+        img {
+
+        }
     }
 
 }
@@ -104,7 +108,39 @@
     transform: scale(1) translateX(0);
 }
 
+#keyvisual.open .p-kv__inner .p-kv__obj img {
+    animation-name: up_anime;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.3s;
+}
+
+
 #keyvisual.open .p-kv__inner .p-kv__txt span {
     opacity: 1;
     transform: translateY(0);
 }
+
+
+@keyframes up_anime {
+    0% {
+
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    50% {
+
+      opacity: 1;
+    }
+    80% {
+
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    100% {
+
+      opacity: 1;
+    }
+  }

@@ -11,9 +11,9 @@
     padding: min(vwsp(4px), 10px) 0 min(vwsp(16px), 24px);
     border-bottom: 1px solid $color-key-2;
     @include mq-target(sm) {
-      font-size: min(vw(36px, 769), 48px);
+      font-size: min(vw(36px, 769), 52px);
       line-height: min(vw(46px, 769), 60px);
-      padding: min(vw(10px, 769), 20px) 0 min(vw(24px, 769), 30px);
+      padding: 0 0 min(vw(24px, 769), 30px);
     }
   }
 

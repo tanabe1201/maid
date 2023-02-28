@@ -5,62 +5,41 @@
     &:before,&:after {
       display: none;
     }
-
-    &__inner {
-      @include mq-target(sm) {
-        // padding: vw(60px, 1920) 0px;
-      }
-      @include mq-target(lg) {
-        // width: vw(1100px, 1920);
-
-      }
-    }
-
     &__list {
       @include maxWidth(840px);
-      // overflow-y: scroll;
-      // overflow-x: hidden;
-      // height: 250px;
-      padding: 0 4%;
       margin-top: 30px;
-
+      
       @include mq-target(sm) {
+        padding: 0 2vw;
         max-width: fit-content;
-        // width: vw(900px,1920);
-        // height: vw(280px,1920);
-        margin-top: vw(40px,1920);
       }
     }
   
     &__body {
+      padding: 15px;
       border-top: 1px dashed $color-key-2;
-      padding: 4%;
+      @include mq-target(sm) {
+        padding: 20px;
+      }
     }
   
-    &__item {
-      // background: linear-gradient(to right bottom, rgba(34, 33, 33, 0.99), rgba(2, 2, 3, 0.99));    
+    &__item { 
       position: relative;
       overflow: hidden;
-      position: relative;
-      border: 1px solid #BD9F6D;
+      border: 1px solid $color-key-2;
       
   
       .js-acc--trigger {
         cursor: pointer;
         position: relative;
-        padding: 10px 20px 10px 76px;
-        padding: 14px 16px 14px 12px;
         @include flex($align:center, $justify:space-between);
-        
+        padding: 15px;
         @include mq-target(sm) {
-            // padding: vw(14px,1920) vw(24px,1920) vw(14px,1920) vw(76px,1920);
+          padding: 14px 16px;
         }
   
 
 
-      }
-      &:not(:last-child) {
-        // margin: 0 0 16px;
       }
     }
   
@@ -70,8 +49,8 @@
       height: 6.1875vw;
       position: relative;
       @include mq-target(sm) {
-        width: vw(42px,1920);
-        height: vw(42px,1920);
+        width: 42px;
+        height: 42px;
       }
   
       &::before, &::after {
@@ -87,7 +66,7 @@
         height: 1px;
         width: 6.1875vw;
         @include mq-target(sm) {
-          width: vw(26px,1920);
+          width: 26px;
         }
       }
   
@@ -95,8 +74,7 @@
         width: 1px;
         height: 6.1875vw;
         @include mq-target(sm) {
-          height: vw(26px,1920);
-
+          height: 26px;
         }
       }
     }
@@ -104,12 +82,9 @@
     &__heading {  
       &--title {
         text-align: left;
-        font-size: 10px;
+        font-size: min(vwsp(10px),14px);
         @include mq-target(sm) {
-          // font-size: 16px;
           font-size: 14px;
-        }
-        @include mq-target(lg) {
         }
       }
     }
@@ -117,21 +92,17 @@
     &__txt {
       a {
         color: $color-white;
-        font-feature-settings: "palt";
         text-align: left;
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        font-size: 10px;
         -webkit-box-orient: vertical;
         overflow: hidden;
         transition: opacity 0.2s ease;
-        font-size: vw(14px,768);
+        font-size: min(vwsp(10px),14px);
         @include mq-target(sm) {
-          font-size: vw(14px,1200);
+          font-size: 14px;
         }
-        @include mq-target(lg) {
-            font-size: vw(14px,1920);
-        }
+
 
         &:hover {
           opacity: 0.5;

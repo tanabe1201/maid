@@ -6,7 +6,7 @@
         font-weight: 900;
         position: relative;
         filter: drop-shadow(0 0 0.1rem rgb(232, 191, 104));
-        margin: 0 0 vwsp(14px);
+        margin: 0 0 min(vwsp(14px),24px);
         @include mq-target(sm) {
             margin: 0 0 vwpc(24px);
         }

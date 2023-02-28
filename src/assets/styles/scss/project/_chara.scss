@@ -550,7 +550,7 @@
 
   &__txt {
     display: block;
-
+    font-size: min(vwsp(12px),16px);
     @include mq-target(sm) {
       font-size: min(vwpc(14px),16px);
     }

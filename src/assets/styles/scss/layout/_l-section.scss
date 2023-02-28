@@ -66,8 +66,8 @@
 
 
     @include mq-target(sm) {
-      width: min(vw(720px,769),1100px);
-      padding: min(vw(60px,769),80px) min(vw(60px,769),100px) min(vw(40px,769),60px);
+      width: min(vw(720px,769),1140px);
+      padding: min(vw(60px,769),80px) min(vw(60px,769),120px) min(vw(60px,769),80px);
     }
 
     &::before,&::after {
@@ -202,13 +202,12 @@
       @include flex($align:center,$justify:center);
       position: relative;
       z-index: 5;
-      height: 15.33vw;
+      height: min(vwsp(32px),46px);
       @include mq-target(sm) {
-        height: min(vwpc(52px),72px);
+        height: min(vwpc(46px),62px);
       }
 
       span {
-        background-size: 3.98vw 3.98vw;
         background: url(../../assets/images/bg_paper_blue.jpg) repeat 0 0;
         background-size: 3.75vw 3.75vw;
         @include flex($align:center,$justify:center);
@@ -216,15 +215,10 @@
         height: 100%;
         position: relative;
         z-index: 0;
-  
-        img {
-          width: min(vwsp(220px),420px);
-          // width: min(vwsp(260px),500px);
-          @include mq-target(sm) {
-            margin-top: -0.54vw;
-            width: min(vwpc(400px),520px);
-          }
-
+        font-size: min(vwsp(14px),20px);
+        color: $color-key-2;
+        @include mq-target(sm) {          
+          font-size: 20px;
         }
       }
     }
@@ -244,7 +238,7 @@
     width: 100%;
 
     @include mq-target(sm) {
-      margin-top: min(vwpc(16px),30px);
+      margin-top: min(vwpc(16px),20px);
       padding: min(vw(18px,769),30px) min(vw(36px,769),60px);
     }
    
@@ -282,9 +276,10 @@
   width: 100%;
   z-index: 20000;
   transition: 0.8s;
+  background: #131313;
   background-image: url(../../assets/images/cross.jpg);
   background-repeat: repeat;
-  background-size: contain;
+  background-size: cover;
   @include flexCenter;
 
   img {

@@ -17,15 +17,10 @@
     }
   }
 
-  &__img {
-    overflow: hidden;
-    border: 3px solid $color-key-2;
-  }
-
   &__list {
     margin: vwsp(20px) 0;
     @include mq-target(sm) {
-      margin: min(vwpc(24px), 30px) 0 min(vwpc(32px), 50px);
+      margin: min(vwpc(24px), 30px) 0 min(vwpc(34px), 40px);
     }
   }
 
@@ -61,7 +56,18 @@
 
 
 
+  &__box {
+    gap: 10px;
+    @include mq-target(sm) {
+      display: flex;
+    }
+  }
 
-
-
+  &__img {
+    margin-top: 10px;
+    overflow: hidden;
+    @include mq-target(sm) {
+      width: 50%;
+    }
+  }
 }

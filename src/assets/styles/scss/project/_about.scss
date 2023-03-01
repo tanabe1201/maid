@@ -59,7 +59,7 @@
     gap: 10px;
     @include mq-target(sm) {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
     }
   }
 
@@ -67,7 +67,7 @@
     margin-top: 10px;
     overflow: hidden;
     @include mq-target(sm) {
-      width: 49%;
+      width: 49.46%;
     }
   }
 }

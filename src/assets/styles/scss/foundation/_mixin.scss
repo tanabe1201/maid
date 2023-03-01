@@ -28,12 +28,15 @@ $mq-breakpoints-max: ('xxs': '440px',
   }
 }
 
-// $vw-viewport: 1920;
+
 @function vw($size, $vw-viewport) {
   $vw-context: $vw-viewport * 0.01 * 1px;
   @return math.div($size, $vw-context) * 1vw;
   @return $size;
 }
+
+
+
 
 @function vwsp($size) {
   $vw-context: 365 * 0.01 * 1px;

@@ -66,8 +66,8 @@
 
 
     @include mq-target(sm) {
-      width: min(vw(720px,769),1140px);
-      padding: min(vw(60px,769),80px) min(vw(60px,769),120px) min(vw(60px,769),80px);
+      width: min(100vw,1140px);
+      padding: min(vw(60px,769),80px) min(vw(50px,769),100px) min(vw(60px,769),80px);
     }
 
     &::before,&::after {
@@ -238,7 +238,7 @@
     width: 100%;
 
     @include mq-target(sm) {
-      margin-top: min(vwpc(16px),20px);
+      margin-top: min(vwpc(16px),26px);
       padding: min(vw(18px,769),30px) min(vw(36px,769),60px);
     }
    

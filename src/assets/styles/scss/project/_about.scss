@@ -5,13 +5,12 @@
 
   &__ttl {
     font-size: min(vw(20px, 365), 32px);
-    font-family: $shippo;
     line-height: min(vw(24px, 365), 40px);;
     color: $color-key-2;
     padding: min(vwsp(4px), 10px) 0 min(vwsp(16px), 24px);
     border-bottom: 1px solid $color-key-2;
     @include mq-target(sm) {
-      font-size: min(vw(36px, 769), 46px);
+      font-size: min(vwpc(36px),52px);
       line-height: min(vw(46px, 769), 60px);
       padding: 0 0 min(vw(24px, 769), 30px);
     }
@@ -45,7 +44,7 @@
         display: flex;
         font-size: min(vw(16px, 769), 18px);
         dt {
-          flex-basis: min(220px, 20vw);
+          flex-basis: min(220px, 22vw);
 
         }
       }
@@ -60,6 +59,7 @@
     gap: 10px;
     @include mq-target(sm) {
       display: flex;
+      flex-wrap: wrap;
     }
   }
 
@@ -67,7 +67,7 @@
     margin-top: 10px;
     overflow: hidden;
     @include mq-target(sm) {
-      width: 50%;
+      width: 49%;
     }
   }
 }

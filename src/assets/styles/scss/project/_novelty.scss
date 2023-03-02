@@ -3,28 +3,41 @@
 .p-novelty {
 
   &__list {
-    
-    @include mq-target(sm) {
-      @include column4(32%);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    &--card {
+      @include mq-target(sm) {
+        @include column4(24%);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        // justify-content: center;
+      }
     }
+    
+
   }
 
   &__item {
-    padding-top: 40px;
-    padding-bottom: 10px;
-
-    // width: 48%;
-    @include mq-target(sm) {
-      width: 32%;
-    }
+    position: relative;
     
-    @include mq-target(md) {
-      width: 32%;
-      // margin: 0 20px;
+    &:not(:first-child) {
+      margin-top: 60px;
     }
+
+    &--card {
+      padding-top: 50px;
+      padding-bottom: 10px;
+      // width: 48%;
+      @include mq-target(sm) {
+        width: 32%;
+      }
+      
+      @include mq-target(md) {
+        width: 24%;
+        // margin: 0 20px;
+      }
+    }
+
 
     &Inner {
       width: min(vwsp(280px),470px);

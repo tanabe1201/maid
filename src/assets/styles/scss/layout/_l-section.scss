@@ -202,7 +202,7 @@
       @include flex($align:center,$justify:center);
       position: relative;
       z-index: 5;
-      height: min(vwsp(32px),46px);
+      height: min(vwsp(46px),56px);
       @include mq-target(sm) {
         height: min(vwpc(46px),62px);
       }
@@ -215,10 +215,10 @@
         height: 100%;
         position: relative;
         z-index: 0;
-        font-size: min(vwsp(14px),20px);
+        font-size: min(vwsp(20px),28px);
         color: $color-key-2;
         @include mq-target(sm) {          
-          font-size: 20px;
+          font-size: 24px;
         }
       }
     }

@@ -27,6 +27,11 @@
       position: relative;
       overflow: hidden;
       border: 1px solid $color-key-2;
+      border-bottom: none;
+
+      &:last-child {
+        border-bottom: 1px solid $color-key-2;
+      }
       
   
       .js-acc--trigger {

@@ -75,8 +75,8 @@ $(function () {
   //swiper 768以下で起動
 
   const elmIndexSwiper = document.querySelectorAll('.js-index-slider');
-  // const elmIndexBtnP = document.querySelectorAll('.js-slider-btnPrev');
-  // const elmIndexBtnN = document.querySelectorAll('.js-slider-btnNext');
+  const elmIndexBtnP = document.querySelectorAll('.js-slider-btnPrev');
+  const elmIndexBtnN = document.querySelectorAll('.js-slider-btnNext');
 
   var swiper;
   $(window).on('load resize', function () {
@@ -85,17 +85,12 @@ $(function () {
       if (swiper) {
         return;
       } else {
-
-
-
-
-
         if (elmIndexSwiper.length > 0) {
           for (let i = 0; i < elmIndexSwiper.length; i++) {
 
             elmIndexSwiper[i].className += i;
-            // elmIndexBtnP[i].className += i;
-            // elmIndexBtnN[i].className += i;
+            elmIndexBtnP[i].className += i;
+            elmIndexBtnN[i].className += i;
 
             var swiper = new Swiper('.js-index-slider' + i, {
               loop: true,
@@ -103,18 +98,10 @@ $(function () {
               centeredSlides: true,
               initialSlide: 0,
               grabCursor: true,
-              // navigation: {
-              //   prevEl: '.js-slider-btnPrev' + i,
-              //   nextEl: '.js-slider-btnNext' + i,
-              // },
-              // breakpoints: {
-              //   768: {
-              //     slidesPerView: 3,
-              //   },
-              //   1199: {
-              //     slidesPerView: 3,
-              //   },
-              // },
+              navigation: {
+                prevEl: '.js-slider-btnPrev' + i,
+                nextEl: '.js-slider-btnNext' + i,
+              },
             });
           }
         }

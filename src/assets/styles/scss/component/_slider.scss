@@ -109,9 +109,9 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    width: vw(62px, 768);
-    height: vw(62px, 768);
-
+    width: vw(82px, 768);
+    height: vw(82px, 768);
+    background-color: $color-red;
     @include mq-target(sm) {
       width: vw(72px, 1200);
       height: vw(72px, 1200);
@@ -122,29 +122,23 @@
     }
 
     &::after {
+
+      color: $color-white;
       content: "";
       position: relative;
-      width: vw(62px, 768);
-      height: vw(62px, 768);
-      background: url(../../assets/images/top_icon.png) no-repeat center/contain;
+      border-width: 14px 0 14px 24px;
+      border-style: solid;
+      border-color: transparent transparent transparent #fff;
 
-      @include mq-target(sm) {
-        width: vw(72px, 1200);
-        height: vw(72px, 1200);
-      }
 
-      @include mq-target(lg) {
-        width: vw(82px, 1920);
-        height: vw(82px, 1920);
-      }
       // content: "";
     }
   }
 
   &__btnPrev {
-    transform: rotate(-90deg);
+    transform: rotate(-180deg);
     right: calc(100% + 20px);
-    left: 10px;
+    left: -10px;
     @include mq-target(sm) {
       left: initial;
     }
@@ -156,7 +150,8 @@
   }
 
   &__btnNext {
-    transform: rotate(90deg);
+    // transform: rotate(90deg);
+    right: -10px;
     left: auto;
     @include mq-target(sm) {
       left: calc(100% + 20px);

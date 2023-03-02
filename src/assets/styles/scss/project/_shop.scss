@@ -1,8 +1,8 @@
 @use "../foundation"as *;
 
 .p-shop {
-    &__wrap {
-
+    &__box {
+        margin-top: 20px;
         @include mq-target(sm) {
             display: flex;
         }

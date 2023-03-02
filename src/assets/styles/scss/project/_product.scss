@@ -5,6 +5,14 @@
     z-index: 10;
 
 
+
+    &__inner {
+        & .c-sec__ttl {
+            // margin-bottom: 0
+        }
+    }
+
+
     &__list {
         &--card {
             @include mq-target(sm) {
@@ -16,11 +24,11 @@
     &__item {
         position: relative;
         &:not(:first-child) {
-          margin-top: 40px;
+        //   margin-top: 40px;
         }
 
         &Inner {
-            width: min(vwsp(280px),470px);
+            width: min(vwsp(260px),520px);
             margin: auto;
 
             @include mq-target(sm) {
@@ -30,8 +38,9 @@
 
         &--card {
             width: 100%;
-            padding-top: 40px;
+            padding-top: 30px;
             padding-bottom: 10px;
+            transition: all .4s;
     
             @include mq-target(sm) {
                 width: 48%;
@@ -39,6 +48,10 @@
     
             @include mq-target(md) {
                 width: 32%;
+            }
+
+            &:hover {
+                transform: scale(1.05);
             }
         }
     }
@@ -54,7 +67,6 @@
         dt {
             font-size: min(vwsp(12px), 18px);
             text-transform: uppercase;
-            font-weight: 900;
             @include mq-target(sm) {
                 font-size: min(vwpc(10px), 14px);
             }
@@ -104,7 +116,9 @@
 
 
             &:first-of-type {
+                color: $color-key-2;
                 margin: 10px 0 0;
+                font-weight: bold;
             }
 
             &:last-of-type {

@@ -3,21 +3,6 @@
 
 .p-camp {
 
-    &__ttl {
-        margin: auto;
-        width: 50.753425vw;
-    
-        @include mq-target(sm) {
-          width: 24vw;
-        }
-    
-        @include mq-target(lg) {
-          width: 18vw;
-        }
-    
-      }
-
-
     &__txt {
         margin-top: 20px;
         font-size: min(vw(10px,365),16px);

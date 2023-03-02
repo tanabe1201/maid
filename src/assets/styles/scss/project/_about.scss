@@ -4,22 +4,38 @@
 .p-event {
 
   &__ttl {
+    position: relative;
     font-size: min(vw(20px, 365), 32px);
     line-height: min(vw(24px, 365), 40px);;
-    color: $color-key-2;
+    background-image: linear-gradient(to right, $color-key-2, #d3c272);
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 0.4rem rgb(232, 191, 104));
     padding: min(vwsp(4px), 10px) 0 min(vwsp(16px), 24px);
-    border-bottom: 1px solid $color-key-2;
+    // border-bottom: 1px solid $color-key-2;
     @include mq-target(sm) {
       font-size: min(vwpc(36px),52px);
       line-height: min(vw(46px, 769), 60px);
       padding: 0 0 min(vw(24px, 769), 30px);
     }
+
+    &::before {
+      content: "";
+      opacity: 0.45;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background: $color-key-2;
+  }
   }
 
   &__list {
     margin: 30px 0;
     @include mq-target(sm) {
       margin: min(vwpc(24px), 30px) 0 min(vwpc(34px), 40px);
+      // margin: min(vwpc(24px), 30px) 0 0;
     }
   }
 
@@ -42,7 +58,7 @@
       margin-bottom: min(vw(18px, 769), 28px);
       dl {
         display: flex;
-        font-size: min(vw(16px, 769), 18px);
+        font-size: min(vw(16px, 769), 20px);
         dt {
           flex-basis: min(220px, 22vw);
 
@@ -64,10 +80,13 @@
   }
 
   &__img {
-    margin-top: 10px;
+    border: 2px solid $color-key-2;
+    // margin-top: 10px;
+    filter: drop-shadow(0 0 0.4rem rgb(232, 191, 104));
+    // border-radius: clamp(12px,2.1vw,24px);
     overflow: hidden;
-    @include mq-target(sm) {
-      width: 49.46%;
-    }
+    // @include mq-target(sm) {
+    //   width: 49.46%;
+    // }
   }
 }

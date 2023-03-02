@@ -28,7 +28,7 @@
                 width: min(vw(160px,365),300px);
                 margin: 0 20px 14px;
                 @include mq-target(sm) {
-                    width: min(vw(200px,769),420px);
+                    width: min(vw(200px,769),260px);
                     margin: 0 min(vw(20px,769),40px) min(vw(8px,769),12px);
                 }
             }

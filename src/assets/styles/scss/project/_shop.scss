@@ -13,7 +13,7 @@
 
         @include mq-target(sm) {
             margin: 0 4% 0 0;
-            width: 46%;
+            width: 50%;
         }
 
         img {
@@ -48,7 +48,7 @@
             }
 
             @include mq-target(sm) {
-                margin: min(vwpc(28px), 40px) 0;
+                margin: min(vwpc(28px), 36px) 0;
             }
         }
     }
@@ -73,7 +73,7 @@
             font-size: min(vw(12px, 365), 18px);
 
             @include mq-target(sm) {
-                font-size: min(vw(12px, 769), 16px);
+                font-size: min(vw(12px, 769), 14px);
             }
 
             dt {

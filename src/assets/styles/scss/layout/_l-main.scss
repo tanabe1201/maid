@@ -6,14 +6,6 @@
   background-image: url(../../assets/images/cross.jpg);
   background-repeat: repeat;
   background-size: contain;
-
-
-  &::before {
-    content: "";
-    @include absAll;
-    // background: url(../../assets/images/section_bg.png) repeat-y top center/100% auto;
-  }
-
 }
 
 

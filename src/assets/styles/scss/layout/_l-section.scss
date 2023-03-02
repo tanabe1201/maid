@@ -61,13 +61,13 @@
     border: 3px solid $color-key-2;
     border-radius: clamp(12px,2.1vw,24px);
     background-image: $color-bg;
-    padding: min(vw(40px,365),80px) min(vw(28px,365),68px);
+    padding: min(vw(40px,365),80px) min(vw(40px,365),80px);
 
 
 
     @include mq-target(sm) {
-      width: min(100vw,1140px);
-      padding: min(vw(60px,769),80px) min(vw(50px,769),100px) min(vw(60px,769),80px);
+      width: min(100vw,1200px);
+      padding: min(vw(60px,769),80px) min(vw(60px,769),120px) min(vw(60px,769),80px);
     }
 
     &::before,&::after {
@@ -86,12 +86,12 @@
 
     &::after {
       top: initial;
-      bottom: 0;
+      bottom: 10px;
       z-index: -1;
       background-image: url(../../assets/images/frame_bottom.webp);
       background-position: bottom;
       background-repeat: no-repeat;
-      background-size: 100%;
+      background-size: 98%;
     }  
   }
 
@@ -104,8 +104,9 @@
     padding-top: min(vwsp(36px),50px);
     position: relative;
     border-radius: 8px;
-    background: $color-bg;  
-    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    // background-image: #131313;
+    border: 2px solid #131313;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
     @include mq-target(sm) {
       margin-top: min(vw(24px,769),46px);
@@ -163,6 +164,51 @@
     &:hover {
       transform: scale(.98);
     }
+  }
+
+  &__btn {
+    text-align: center;
+    margin-top: min(vwsp(30px),50px);
+    @include mq-target(sm) {
+      margin-top: min(vwpc(40px),60px);
+    }
+    a {
+      position: relative;
+      background: linear-gradient(90deg,#415cd4,#5269ec);
+      box-shadow: 0 4px 24px 0 rgba(21, 135, 152, 0.4);
+      border-radius: 32px;
+      font-size: min(vwsp(12px),16px);
+      padding: min(vwsp(10px),15px) min(vwpc(80px),120px);
+      color: $color-white;
+      transition: all .4s;
+      
+      @include mq-target(sm) {
+        font-size: min(vwpc(12px),16px);
+        padding: min(vwpc(10px),15px) min(vwpc(80px),120px);
+      }
+  
+      &::after {
+        content: "";
+        display: inline-block;
+        border-radius: 100px;
+        @include absAll;
+        z-index: -1;
+        transition: all .4s;
+        background-color: #fff;
+      }
+  
+      &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0 1rem 2rem rgb(0 0 0 / 20%);
+  
+        &::after {
+          transform: scaleX(1.4) scaleY(1.6);
+          opacity: 0;
+        }
+      }
+    }
+
+
   }
 
   &__obj {
@@ -260,7 +306,7 @@
       font-weight: bold;
       
       @include mq-target(sm) {
-        font-size: min(vw(16px,768),18px);
+        font-size: min(vw(16px,768),22px);
       }
     }
   }

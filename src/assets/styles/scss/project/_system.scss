@@ -12,6 +12,7 @@
 
     &__list {
         // width: 90%;
+        padding: 0 4vw;
         @include flex($align:stretch, $wrap:wrap, $justify:space-between);
         margin: auto;
 
@@ -60,6 +61,7 @@
     &__txt {
         font-size: 28px;
         font-size: min(vw(18px,365),26px);
+        margin-bottom: 20px;
 
         @include mq-target(sm) {
             font-size: vw(28px, 1920);

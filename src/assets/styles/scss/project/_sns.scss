@@ -15,14 +15,15 @@
         @include flex($align:center, $justify:space-between);
         justify-content: center;
         margin-top: 20px;
+        width: min(vwsp(380px),700px);
         @include mq-target(sm) {
             margin-top: 2.57143vw;
-            width: 700px;
+            width: min(vwpc(520px),640px);
         }
     }
 
     &__item {
-        width: 40%;
+        width: 49%;
         margin: 0 10px;
     }
 }

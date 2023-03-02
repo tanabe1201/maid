@@ -1,9 +1,6 @@
 @use "../foundation"as *;
 
 .p-shop {
-
-
-
     &__wrap {
 
         @include mq-target(sm) {
@@ -12,7 +9,8 @@
     }
 
     &__head {
-        margin: 0 0 42px 0;   
+        margin: 0 0 42px 0;
+
         @include mq-target(sm) {
             margin: 0 4% 0 0;
             width: 46%;
@@ -24,9 +22,10 @@
     }
 
     &__body {
-        flex: 1 1 auto;
+        flex: 1;
         text-align: left;
     }
+
 
     &__map {
         border: 3px solid $color-key-2;
@@ -40,23 +39,31 @@
     }
 
     &__list {
-        margin: 20px 0 0;
-        @include mq-target(sm) {
-          margin: min(vw(20px, 769), 40px) 0 0;
+
+        &--sns {
+            display: flex;
+            margin: min(vwsp(28px), 40px) 0;
+            @include mq(sm) {
+                justify-content: space-between;
+            }
+
+            @include mq-target(sm) {
+                margin: min(vwpc(28px), 40px) 0;
+            }
         }
     }
 
     &__item {
         &:not(:first-child) {
-            margin-top: 30px;
-            padding-top: 30px;
+            margin-top: min(vwsp(16px), 30px);
+            padding-top: min(vwsp(16px), 30px);
             border-width: 1px;
             border-top-style: solid;
             border-top-color: $color-key-2;
 
             @include mq-target(sm) {
-                margin-top: min(vwpc(20px),30px);
-                padding-top: min(vwpc(20px),30px);
+                margin-top: min(vwpc(18px), 24px);
+                padding-top: min(vwpc(18px), 24px);
             }
 
         }
@@ -66,7 +73,7 @@
             font-size: min(vw(12px, 365), 18px);
 
             @include mq-target(sm) {
-                font-size: min(vw(12px, 769),16px);
+                font-size: min(vw(12px, 769), 16px);
             }
 
             dt {
@@ -74,10 +81,11 @@
                 // display: flex;
                 // justify-content: space-between;
                 flex-basis: min(220px, 20vw);
+
                 @include mq-target(sm) {
                     flex-basis: min(140px, 10vw);
                 }
-            
+
             }
 
             dd {
@@ -91,14 +99,27 @@
                 }
             }
         }
+
+
+        &--sns {
+            width: 49%;
+            @include mq-target(sm) {
+                width: 33%;
+                &:nth-of-type(2) {
+                    margin: 0 2%;
+                }
+            }
+
+        }
     }
 
     &__heading {
         color: $color-key-2;
-        font-size: min(vwsp(26px),36px);
+        font-size: min(vwsp(26px), 36px);
         line-height: 1;
+
         @include mq-target(sm) {
-            font-size: min(vwpc(26px),36px);
+            font-size: min(vwpc(26px), 36px);
         }
     }
 }

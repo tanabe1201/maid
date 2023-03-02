@@ -17,7 +17,7 @@
   }
 
   &__list {
-    margin: vwsp(20px) 0;
+    margin: 30px 0;
     @include mq-target(sm) {
       margin: min(vwpc(24px), 30px) 0 min(vwpc(34px), 40px);
     }
